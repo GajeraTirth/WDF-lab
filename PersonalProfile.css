@@ -2,135 +2,166 @@
     --primary-color: #2c3e50;
     --secondary-color: #3498db;
     --bg-color: #f4f7f6;
+    --card-bg: #fff;
     --text-color: #333;
-    --card-bg: #ffffff;
 }
 
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    line-height: 1.6;
-    margin: 0;
-    padding: 20px;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-.container {
-    max-width: 1100px;
-    margin: 0 auto;
-    display: flex;
-    gap: 30px;
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:var(--bg-color);
+    color:var(--text-color);
+    padding:20px;
 }
 
-/* Left Side: Main Content */
-.main-content {
-    flex: 2;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+/* ===========================
+        GRID LAYOUT
+=========================== */
+
+.container{
+    max-width:1100px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:2fr 1fr;
+    gap:25px;
 }
 
-.section-card {
-    background: var(--card-bg);
-    padding: 25px;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+/* ===========================
+        LEFT CONTENT
+=========================== */
+
+.main-content{
+    display:flex;
+    flex-direction:column;
+    gap:20px;
 }
 
-h2 {
-    color: var(--primary-color);
-    border-bottom: 2px solid var(--secondary-color);
-    padding-bottom: 10px;
-    margin-top: 0;
+/* Cards */
+
+.section-card{
+    background:var(--card-bg);
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 4px 8px rgba(0,0,0,.1);
 }
 
-ul {
-    padding-left: 20px;
+.section-card h2{
+    color:var(--primary-color);
+    border-bottom:2px solid var(--secondary-color);
+    padding-bottom:8px;
+    margin-bottom:15px;
 }
 
-.skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-    gap: 10px;
+/* ===========================
+        SKILLS GRID
+=========================== */
+
+.skills-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
+    gap:12px;
 }
 
-.skill-tag {
-    background: var(--secondary-color);
-    color: white;
-    padding: 8px 12px;
-    border-radius: 20px;
-    text-align: center;
-    font-size: 0.9em;
-    font-weight: bold;
+.skill-tag{
+    background:var(--secondary-color);
+    color:#fff;
+    text-align:center;
+    padding:10px;
+    border-radius:20px;
+    font-weight:bold;
 }
 
-.project-item {
-    margin-bottom: 20px;
+/* ===========================
+        PROJECTS FLEX
+=========================== */
+
+.project-item{
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+    margin-bottom:20px;
 }
 
-.project-item h3 {
-    margin: 0 0 5px 0;
-    color: var(--primary-color);
+.project-item h3{
+    color:var(--primary-color);
 }
 
-/* Right Side: Sidebar */
-.sidebar-right {
-    flex: 1;
-    background: var(--card-bg);
-    padding: 25px;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: fit-content;
+/* ===========================
+        SIDEBAR CARD
+=========================== */
+
+.sidebar-right{
+    background:var(--card-bg);
+    border-radius:10px;
+    box-shadow:0 4px 8px rgba(0,0,0,.1);
+    padding:25px;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
 }
 
-.profile-photo {
-    width: 180px;
-    height: 180px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 4px solid var(--secondary-color);
-    margin-bottom: 20px;
+.profile-photo{
+    width:180px;
+    height:180px;
+    border-radius:50%;
+    object-fit:cover;
+    border:4px solid var(--secondary-color);
+    margin-bottom:20px;
 }
 
-.personal-details {
-    width: 100%;
+.personal-details{
+    width:100%;
+    display:flex;
+    flex-direction:column;
+    gap:15px;
 }
 
-.personal-details h1 {
-    text-align: center;
-    font-size: 1.8em;
-    margin: 0 0 5px 0;
-    color: var(--primary-color);
+.personal-details h1{
+    text-align:center;
+    color:var(--primary-color);
 }
 
-.personal-details .title {
-    text-align: center;
-    color: #7f8c8d;
-    margin-bottom: 20px;
-    font-weight: 500;
+.title{
+    text-align:center;
+    color:#666;
 }
 
-.detail-item {
-    margin-bottom: 15px;
+/* Detail Layout */
+
+.detail-item{
+    display:flex;
+    justify-content:space-between;
+    border-bottom:1px solid #ddd;
+    padding-bottom:8px;
 }
 
-.detail-label {
-    font-weight: bold;
-    color: var(--primary-color);
-    display: block;
-    font-size: 0.9em;
+.detail-label{
+    font-weight:bold;
+    color:var(--primary-color);
 }
 
-.detail-value {
-    color: #555;
+.detail-value{
+    text-align:right;
 }
 
+/* ===========================
+        MOBILE
+=========================== */
 
-@media (max-width: 768px) {
-    .container {
-        flex-direction: column-reverse;
-    }
+@media(max-width:768px){
+
+.container{
+    grid-template-columns:1fr;
+}
+
+.sidebar-right{
+    order:-1;
+}
+
 }

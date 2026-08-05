@@ -128,9 +128,9 @@ ul {
     color: #555;
 }
 
-/* Responsive Design for Mobile */
+
 @media (max-width: 768px) {
     .container {
-        flex-direction: column-reverse; /* Puts the sidebar on top on mobile */
+        flex-direction: column-reverse;
     }
 }

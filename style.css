@@ -51,28 +51,26 @@ nav a:hover{
    Hero Section
 ========================== */
 
-.hero{
+.head{
     background:#0059b3;
     color:white;
     text-align:center;
     padding:80px 20px;
 }
 
-.hero h2{
+.head h2{
     font-size:40px;
     margin-bottom:20px;
 }
 
-.hero p{
+.head p{
     font-size:18px;
     max-width:700px;
     margin:auto;
     margin-bottom:30px;
 }
 
-/* ==========================
-   Buttons
-========================== */
+
 
 .btn{
     display:inline-block;
@@ -88,9 +86,7 @@ nav a:hover{
     background:orange;
 }
 
-/* ==========================
-   Sections
-========================== */
+
 
 section{
     padding:50px;
@@ -101,9 +97,6 @@ section h2{
     margin-bottom:20px;
 }
 
-/* ==========================
-   Highlights
-========================== */
 
 .highlights{
     background:white;
@@ -117,9 +110,7 @@ section h2{
     margin-bottom:10px;
 }
 
-/* ==========================
-   About Page
-========================== */
+
 
 .page-title{
     background:#0059b3;

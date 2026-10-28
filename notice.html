@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Notices | StudentHub</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+  <a class="brand" href="home.html" aria-label="StudentHub home"><span class="brand-mark">S</span><span class="brand-copy"><strong>StudentHub</strong><small>Campus, connected.</small></span></a>
+  <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+  <nav class="site-nav" aria-label="Main navigation"><a href="home.html">Overview</a><a href="course.html">Courses</a><a href="timetable.html">Timetable</a><a href="result.html">Results</a><a href="notice.html">Notices</a><a href="event.html">Events</a><a href="portfolio.html">Profile</a><a href="about.html">About</a><a href="contact.html">Contact</a><a href="feedback.html">Feedback</a><a class="nav-cta" href="login.html">Sign in <span>↗</span></a></nav>
+</header>
+
+    <main class="container">
+      <section class="card notices-section">
+        <h1>Student Notices</h1>
+        <p>Search and explore college announcements and updates.</p>
+
+        <div class="notice-controls">
+          <input
+            type="search"
+            id="searchNotice"
+            placeholder="Search notices..."
+            aria-label="Search notices"
+          />
+
+          <select id="filterCategory" aria-label="Filter by category">
+            <option value="All">All Categories</option>
+            <option value="Exam">Exam</option>
+            <option value="Event">Event</option>
+            <option value="Academic">Academic</option>
+            <option value="General">General</option>
+          </select>
+
+          <select id="sortDate" aria-label="Sort notices by date">
+            <option value="newest">Newest First</option>
+            <option value="oldest">Oldest First</option>
+          </select>
+        </div>
+
+        <p id="noticeStatus" role="status" aria-live="polite">
+          Loading notices...
+        </p>
+
+        <div id="noticeList" class="notice-list"></div>
+
+        <div class="pagination">
+          <button id="prevPage" type="button" disabled>Previous</button>
+          <span id="pageInfo">Page 1 of 1</span>
+          <button id="nextPage" type="button" disabled>Next</button>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>&copy; 2026 StudentHub. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

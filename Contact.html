@@ -1,129 +1,79 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - CHARUSAT University</title>
-    <link rel="stylesheet" href="style.css">
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>StudentHub - Contact</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
 
-<body>
+  <body>
+    <header class="site-header">
+  <a class="brand" href="home.html" aria-label="StudentHub home"><span class="brand-mark">S</span><span class="brand-copy"><strong>StudentHub</strong><small>Campus, connected.</small></span></a>
+  <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+  <nav class="site-nav" aria-label="Main navigation"><a href="home.html">Overview</a><a href="course.html">Courses</a><a href="timetable.html">Timetable</a><a href="result.html">Results</a><a href="notice.html">Notices</a><a href="event.html">Events</a><a href="portfolio.html">Profile</a><a href="about.html">About</a><a href="contact.html">Contact</a><a href="feedback.html">Feedback</a><a class="nav-cta" href="login.html">Sign in <span>↗</span></a></nav>
+</header>
 
-    <!-- Header -->
-    <header>
-        <h1>CHARUSAT University</h1>
+    <main class="container">
+      <div class="card">
+        <h2>Contact Information</h2>
+        <p><strong>StudentHub Portal</strong></p>
+        <h3>Address</h3>
+        <p>XYZ Engineering College,<br />Surat, Gujarat</p>
+        <p><strong>Email:</strong> info@studenthub.com</p>
 
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="about.html">Information</a>
-            <a href="login.html">Login</a>
-            <a href="register.html">Register</a>
-            <a href="contact.html">Contact</a>
-        </nav>
-    </header>
+        <h3>Contact Form</h3>
 
-    <section class="page-title">
-        <h2>Contact Us</h2>
-        <p>We are happy to help you with your queries.</p>
-    </section>
+        <!-- CHANGED: Added action and method -->
+        <form action="register.php" method="POST">
+          <!-- CHANGED: Added hidden field -->
+          <input type="hidden" name="form_type" value="contact" />
 
+          <label for="name">Name</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Your name"
+            required
+          />
 
-    <section class="content">
+          <label for="email">Email</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="you@example.com"
+            required
+          />
 
-        <h2>University Contact Details</h2>
+          <label for="subject">Subject</label>
+          <input
+            type="text"
+            id="subject"
+            name="subject"
+            placeholder="Subject"
+            required
+          />
 
-        <p><strong>University Name:</strong> CHARUSAT University</p>
+          <label for="message">Message</label>
+          <textarea
+            id="message"
+            name="message"
+            rows="5"
+            placeholder="Write your message"
+            required
+          ></textarea>
 
-        <p><strong>Address:</strong><br>
-        CHARUSAT Campus,<br>
-        Off Nadiad-Petlad Highway,<br>
-        Changa - 388421,<br>
-        Anand, Gujarat, India
-        </p>
-
-        <p><strong>Phone:</strong> +91-2697-265011</p>
-
-        <p><strong>Email:</strong> info@charusat.ac.in</p>
-
-        <p><strong>Website:</strong> www.charusat.ac.in</p>
-
-        <p><strong>Office Hours:</strong><br>
-        Monday - Saturday : 9:00 AM to 5:00 PM<br>
-        Sunday : Closed
-        </p>
-
-    </section>
-
-    <!-- Contact Form -->
-    <section>
-
-        <form action="#" method="post">
-
-            <h2 style="text-align:center;">Send Us a Message</h2>
-
-            <label for="name">Full Name</label>
-            <input
-                type="text"
-                id="name"
-                name="name"
-                placeholder="Enter your full name"
-                required
-            >
-
-            <label for="email">Email Address</label>
-            <input
-                type="email"
-                id="email"
-                name="email"
-                placeholder="Enter your email"
-                required
-            >
-
-            <label for="mobile">Mobile Number</label>
-            <input
-                type="tel"
-                id="mobile"
-                name="mobile"
-                placeholder="Enter your mobile number"
-                required
-            >
-
-            <label for="subject">Subject</label>
-            <input
-                type="text"
-                id="subject"
-                name="subject"
-                placeholder="Enter subject"
-                required
-            >
-
-            <label for="message">Message</label>
-            <textarea
-                id="message"
-                name="message"
-                rows="6"
-                placeholder="Write your message here..."
-                required
-            ></textarea>
-
-            <input type="submit" value="Send Message">
-
+          <div style="margin-top: 12px">
+            <input type="submit" value="Submit" />
+          </div>
         </form>
+      </div>
 
-    </section>
-
-    <!-- Footer -->
-    <footer>
-
-        <p><strong>CHARUSAT University</strong></p>
-
-        <p>Knowledge Corridor, Changa, Anand, Gujarat - 388421</p>
-
-        <p>Email: info@charusat.ac.in | Phone: +91-2697-265011</p>
-
-        <p>&copy; 2026 CHARUSAT University. All Rights Reserved.</p>
-
-    </footer>
-
+      <footer class="footer">&copy; 2026 StudentHub</footer>
+    </main>
+    <script src="script.js" defer></script>
+  <footer class="site-footer"><div><strong>StudentHub</strong><span>One campus. Every opportunity.</span></div><p>© 2026 StudentHub · Designed for student life</p></footer>
 </body>
 </html>

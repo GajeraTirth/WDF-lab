@@ -1,150 +1,157 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Registration - CHARUSAT University</title>
-    <link rel="stylesheet" href="style.css">
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Registration | StudentHub</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+  <a class="brand" href="home.html" aria-label="StudentHub home"><span class="brand-mark">S</span><span class="brand-copy"><strong>StudentHub</strong><small>Campus, connected.</small></span></a>
+  <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+  <nav class="site-nav" aria-label="Main navigation"><a href="home.html">Overview</a><a href="course.html">Courses</a><a href="timetable.html">Timetable</a><a href="result.html">Results</a><a href="notice.html">Notices</a><a href="event.html">Events</a><a href="portfolio.html">Profile</a><a href="about.html">About</a><a href="contact.html">Contact</a><a href="feedback.html">Feedback</a><a class="nav-cta" href="login.html">Sign in <span>↗</span></a></nav>
+</header>
 
-<body>
+    <main class="container">
+      <div class="card registration-card">
+        <h1>Student Registration</h1>
+        <p>Enter your details to complete the registration form.</p>
 
-    <!-- Header -->
-    <header>
-        <h1>CHARUSAT University</h1>
+        <!-- CHANGED: Added action and method -->
+        <form
+          id="registrationForm"
+          action="register.php"
+          method="POST"
+          novalidate
+        >
+          <!-- CHANGED: Added hidden field for PHP to know which form was submitted -->
+          <input type="hidden" name="form_type" value="registration" />
 
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="about.html">Information</a>
-            <a href="login.html">Login</a>
-            <a href="register.html">Register</a>
-            <a href="contact.html">Contact</a>
-        </nav>
-    </header>
-
-    <!-- Page Title -->
-    <section class="page-title">
-        <h2>Student Registration</h2>
-        <p>Create your student account by filling in the form below.</p>
-    </section>
-
-    <!-- Registration Form -->
-    <section>
-
-        <form action="index.html" method="post">
-
-            <label for="fname">First Name</label>
+          <div class="form-group">
+            <label for="name">Full Name</label>
             <input
-                type="text"
-                id="fname"
-                name="fname"
-                placeholder="Enter your first name"
-                required
-            >
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Enter your full name"
+              required
+            />
+            <small class="error" id="nameError"></small>
+          </div>
 
-            <label for="lname">Last Name</label>
-            <input
-                type="text"
-                id="lname"
-                name="lname"
-                placeholder="Enter your last name"
-                required
-            >
-
-            <label for="gender">Gender</label>
-            <select id="gender" name="gender" required>
-                <option value="">Select Gender</option>
-                <option>Male</option>
-                <option>Female</option>
-                <option>Other</option>
-            </select>
-
-            <label for="dob">Date of Birth</label>
-            <input
-                type="date"
-                id="dob"
-                name="dob"
-                required
-            >
-
+          <div class="form-group">
             <label for="email">Email Address</label>
             <input
-                type="email"
-                id="email"
-                name="email"
-                placeholder="Enter your email"
-                required
-            >
+              type="email"
+              id="email"
+              name="email"
+              placeholder="student@example.com"
+              required
+            />
+            <small class="error" id="emailError"></small>
+          </div>
 
-            <label for="password">Create Password</label>
-            <input
-                type="password"
-                id="password"
-                name="password"
-                placeholder="Create a password"
-                required
-            >
-
-              <label for="confirm">Confirm Password</label>
-            <input
-                type="password"
-                id="confirm"
-                name="confirm"
-                placeholder="Confirm your password"
-                required
-            >
-
+          <div class="form-group">
             <label for="mobile">Mobile Number</label>
             <input
-                type="tel"
-                id="mobile"
-                name="mobile"
-                placeholder="Enter your mobile number"
-                required
-            >
+              type="tel"
+              id="mobile"
+              name="mobile"
+              placeholder="Enter 10-digit mobile number"
+              inputmode="numeric"
+              maxlength="10"
+              required
+            />
+            <small class="error" id="mobileError"></small>
+          </div>
 
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Create a password"
+              required
+            />
+            <small class="error" id="passwordError"></small>
+          </div>
+
+          <div class="form-group">
+            <label for="confirmPassword">Confirm Password</label>
+            <input
+              type="password"
+              id="confirmPassword"
+              name="confirmPassword"
+              placeholder="Confirm your password"
+              required
+            />
+            <small class="error" id="confirmPasswordError"></small>
+          </div>
+
+          <div class="form-group">
             <label for="course">Course</label>
             <select id="course" name="course" required>
-                <option value="">Select Course</option>
-                <option>B.Tech</option>
-                <option>M.Tech</option>
-                <option>BCA</option>
-                <option>MCA</option>
-                <option>BBA</option>
-                <option>MBA</option>
-                <option>B.Pharm</option>
-                <option>M.Pharm</option>
+              <option value="">Select your course</option>
+              <option value="CSE">Computer Science Engineering</option>
+              <option value="CE">Computer Engineering</option>
+              <option value="IT">Information Technology</option>
+              <option value="AIML">
+                Artificial Intelligence and Machine Learning
+              </option>
+              <option value="ECE">
+                Electronics and Communication Engineering
+              </option>
+              <option value="ME">Mechanical Engineering</option>
             </select>
+            <small class="error" id="courseError"></small>
+          </div>
 
+          <div class="form-group">
+            <label for="year">Academic Year</label>
+            <select id="year" name="year" required>
+              <option value="">Select your academic year</option>
+              <option value="1">First Year</option>
+              <option value="2">Second Year</option>
+              <option value="3">Third Year</option>
+              <option value="4">Fourth Year</option>
+            </select>
+            <small class="error" id="yearError"></small>
+          </div>
 
+          <fieldset class="form-group gender-group">
+            <legend>Gender</legend>
+            <label
+              ><input type="radio" name="gender" value="Male" /> Male</label
+            >
+            <label
+              ><input type="radio" name="gender" value="Female" /> Female</label
+            >
+            <label
+              ><input type="radio" name="gender" value="Other" /> Other</label
+            >
+            <small class="error" id="genderError"></small>
+          </fieldset>
 
-            <input type="submit" value="Register">
+          <div class="form-group terms-group">
+            <label for="terms">
+              <input type="checkbox" id="terms" name="terms" />
+              I accept the terms and conditions.
+            </label>
+            <small class="error" id="termsError"></small>
+          </div>
 
-            <br><br>
-
-            <p style="text-align:center;">
-                Already have an account?
-                <a href="login.html">Login Here</a>
-            </p>
-
+          <button type="submit">Register</button>
+          <p id="formMessage" role="status" aria-live="polite"></p>
         </form>
+      </div>
+    </main>
 
-    </section>
-
-    <!-- Footer -->
-    <footer>
-
-        <p><strong>CHARUSAT University</strong></p>
-
-        <p>Knowledge Corridor, Changa, Anand, Gujarat</p>
-
-        <p>Email: info@charusat.ac.in</p>
-
-        <p>Phone: +91-2697-265011</p>
-
-        <p>&copy; 2026 CHARUSAT University. All Rights Reserved.</p>
-
+    <footer class="site-footer">
+      <p>&copy; 2026 StudentHub. All rights reserved.</p>
     </footer>
 
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>
